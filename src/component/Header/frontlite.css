@@ -2837,6 +2837,23 @@ ul.elementor-icon-list-items.elementor-inline-items .elementor-inline-item {
     display: inline-block
 }
 
+.elementor-button-wrapper>button.elementor-button.elementor-size-md.btn-g {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #4CAF50; 
+}
+.elementor-button-wrapper>button.elementor-button.elementor-size-md.btn-b {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #008CBA;
+}
+
 .elementor-button.elementor-size-xs {
     font-size: 13px;
     padding: 10px 20px;

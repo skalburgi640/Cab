@@ -1,23 +1,23 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../asset/logocrop.jpeg';
 
 import './all.css';
 import './brands.css';
-import './elementor-icons.css';
-import './fontawesome.css';
-import './frontend-lite.css';
-import './global.css';
-import './post-19.css';
-import './post-33.css';
-import './post-40.css';
-import './post-71.css';
-import './solid.css';
-import './style.css';
-import './theme.css';
-import './v4-shims.css';
+import './ele-icons.css';
+import './frontlite.css';
+import './world.css';
+import './custom-post-1.css';
+import './custom-post-2.css';
+import './custom-post-3.css';
+import './custom-post-4.css';
+import './liqid.css';
+import './stylescss.css';
+import './themeo-graphy.css';
+import './new-version.css';
 import '../../App.css';
-import "./widget-icon-list.css";
-import "./widget-nav-menu.css";
+import "./icon-list.css";
+import "./nav-menu.css";
 const Header = () => {
   return (
     <div
@@ -50,7 +50,7 @@ const Header = () => {
                     <img
                       width="404"
                       height="186"
-                      src="https://a6ke76.n3cdn1.secureserver.net/wp-content/uploads/2022/12/logo-02.png"
+                      src={logo}
                       className="attachment-full size-full wp-image-804"
                       alt=""
                       loading="lazy"
@@ -114,6 +114,7 @@ const Header = () => {
                     >
                       <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-71 current_page_item menu-item-73">
                         <a
+                          href='/'
                           aria-current="page"
                           className="elementor-item elementor-item-active"
                         >

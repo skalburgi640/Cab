@@ -5,7 +5,7 @@
 
 .elementor-71 .elementor-element.elementor-element-55a3e5be:not(.elementor-motion-effects-element-type-background),
 .elementor-71 .elementor-element.elementor-element-55a3e5be>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-    background-image: url("https://a6ke76.n3cdn1.secureserver.net/wp-content/uploads/2022/11/IMG-0315.jpg?time=1673524630");
+    background-image: url("../../asset/VeerCarRentalLandingPage.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1286,12 +1286,6 @@ body .elementor-71 .elementor-element.elementor-element-2204c73f .elementor-labe
 @media(max-width:767px) {
     .elementor-71 .elementor-element.elementor-element-55a3e5be>.elementor-container {
         min-height: 580px;
-    }
-
-    .elementor-71 .elementor-element.elementor-element-55a3e5be:not(.elementor-motion-effects-element-type-background),
-    .elementor-71 .elementor-element.elementor-element-55a3e5be>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-        background-position: -336px 0px;
-        background-size: cover;
     }
 
     .elementor-71 .elementor-element.elementor-element-55a3e5be {
