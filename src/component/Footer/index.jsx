@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 import fb from '../../asset/fb.jpg';
 import inst from '../../asset/inst.jpg';
 import twit from '../../asset/twit.png';
@@ -54,14 +57,14 @@ const Footer = () => {
                                     <div className="elementor-widget-container">
                                         <ul className="elementor-icon-list-items">
                                             <li className="elementor-icon-list-item">
-                                                <span className="elementor-icon-list-icon">
-                                                    <i aria-hidden="true" className="fas fa-phone-alt"></i> </span>
-                                                <span className="elementor-icon-list-text footer">+91-9960536327</span>
+                                                <span className="elementor-icon-list-icon footer-icon">
+                                                <FontAwesomeIcon icon={faPhone} /> </span>
+                                                <span className="elementor-icon-list-text footer">+91-9960536327</span>&nbsp;&nbsp;
                                                 <span className="elementor-icon-list-text footer">+91-9960536327</span>
                                             </li>
                                             <li className="elementor-icon-list-item">
-                                                <span className="elementor-icon-list-icon">
-                                                    <i aria-hidden="true" className="fas fa-inbox"></i> </span>
+                                                <span className="elementor-icon-list-icon footer-icon">
+                                                <FontAwesomeIcon icon={faEnvelope} /> </span>
                                                 <span className="elementor-icon-list-text footer">ranjitpatil26496@gmail.com</span>
                                             </li>
                                         </ul>
