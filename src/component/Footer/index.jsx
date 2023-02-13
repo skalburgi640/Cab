@@ -1,7 +1,13 @@
 import fb from '../../asset/fb.jpg';
 import inst from '../../asset/inst.jpg';
 import twit from '../../asset/twit.png';
-import logocrop from '../../asset/logocrop.jpeg';
+import logocrop from '../../asset/logocrop.png';
+import pay from '../../asset/pay.png';
+import gpay from '../../asset/gpay.png';
+import ppay from '../../asset/ppay.png';
+import cash from '../../asset/cash.png';
+
+import './styles.css';
 
 const Footer = () => {
     return (
@@ -28,7 +34,7 @@ const Footer = () => {
                                 </div>
                                 <div className="elementor-element elementor-element-af72ee5 elementor-widget elementor-widget-text-editor"
                                     data-id="af72ee5" data-element_type="widget" data-widget_type="text-editor.default">
-                                    <div className="elementor-widget-container">
+                                    <div className="elementor-widget-container footer">
                                         <p>&nbsp;Follow our social media platforms to know more about us.</p>
                                     </div>
                                 </div>
@@ -50,12 +56,13 @@ const Footer = () => {
                                             <li className="elementor-icon-list-item">
                                                 <span className="elementor-icon-list-icon">
                                                     <i aria-hidden="true" className="fas fa-phone-alt"></i> </span>
-                                                <span className="elementor-icon-list-text">+91-9960536327</span>
+                                                <span className="elementor-icon-list-text footer">+91-9960536327</span>
+                                                <span className="elementor-icon-list-text footer">+91-9960536327</span>
                                             </li>
                                             <li className="elementor-icon-list-item">
                                                 <span className="elementor-icon-list-icon">
                                                     <i aria-hidden="true" className="fas fa-inbox"></i> </span>
-                                                <span className="elementor-icon-list-text">ranjitpatil26496@gmail.com</span>
+                                                <span className="elementor-icon-list-text footer">ranjitpatil26496@gmail.com</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -78,7 +85,9 @@ const Footer = () => {
                                         <div className="elementor-social-icons-wrapper elementor-grid">
                                             <span className="elementor-grid-item">
                                                 <a className="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-87a9f85"
-                                                    target="_blank">
+                                                    target="_blank"
+                                                    href='https://www.facebook.com/ranniti111?mibextid=ZbWKwL'
+                                                >
                                                     <span className="elementor-screen-only">Facebook</span>
                                                     <img src={fb} alt="face book" /> </a>
                                             </span>
@@ -90,13 +99,30 @@ const Footer = () => {
                                             </span>
                                             <span className="elementor-grid-item">
                                                 <a className="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-8350dfa"
-                                                    target="_blank">
+                                                    target="_blank"
+                                                    href='https://www.instagram.com/invites/contact/?i=1y2fji57z77fm&utm_content=ni34sks'
+                                                >
                                                     <span className="elementor-screen-only">Instagram</span>
                                                     <img src={inst} alt="face book" /> </a>
                                             </span>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="elementor-container elementor-column-gap-default">
+                        <div className="elementor-widget-container pay-link">
+                            <div className="left footer">
+                                <p>With Indore Cab, you do not have to worry about payment methods.We have all for you.  <br /> PayTm, Phonepe, Google Pay, Cash, etc. are some to name a few. </p>
+                            </div>
+                            <div className="right">
+                                <ul className="pay-nav">
+                                    <li><a><img src={pay} title="download (1)" alt="download (1)" /></a></li>
+                                    <li><a><img src={gpay} title="Google-Pay-logo-1024×512 (1)" alt="Google-Pay-logo-1024x512 (1)" /></a></li>
+                                    <li><a><img src={ppay} title="images (1)" alt="images (1)" /></a></li>
+                                    <li><a><img src={cash} title="Cash" alt="Cash" /></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>

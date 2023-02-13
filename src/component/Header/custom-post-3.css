@@ -4,7 +4,7 @@
 
 .elementor-40 .elementor-element.elementor-element-37bde12b:not(.elementor-motion-effects-element-type-background),
 .elementor-40 .elementor-element.elementor-element-37bde12b>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-    background-color: #FFFFFF;
+    background-color: #292a29;
 }
 
 .elementor-40 .elementor-element.elementor-element-37bde12b {
@@ -38,7 +38,7 @@
 }
 
 .elementor-40 .elementor-element.elementor-element-2d0bd2a .elementor-heading-title {
-    color: #000000;
+    color: #FECC18;
     font-family: "Montserrat", Sans-serif;
     font-size: 18px;
     font-weight: 600;
@@ -64,7 +64,7 @@
 }
 
 .elementor-40 .elementor-element.elementor-element-b7f6a18 .elementor-heading-title {
-    color: #000000;
+    color: #FECC18;
     font-family: "Montserrat", Sans-serif;
     font-size: 18px;
     font-weight: 600;
@@ -153,6 +153,7 @@
     }
 }
 
+
 @media(min-width:768px) {
     .elementor-40 .elementor-element.elementor-element-364946d4 {
         width: 30%;
@@ -161,4 +162,8 @@
     .elementor-40 .elementor-element.elementor-element-c74e9a6 {
         width: 36.333%;
     }
+}
+
+.footer{
+    color: #fff !important;
 }

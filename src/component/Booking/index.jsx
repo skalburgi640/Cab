@@ -1,15 +1,21 @@
-import { useState } from 'react';
+import { useState, useContext, useRef } from 'react';
 import { Form, Field } from 'react-final-form';
 import { Sedan, Suv, Luxury } from '../../utils/constant';
+import { UserConsumer } from '../../contextProvider';
+
 import './style.css';
 
 const Booking = () => {
+	const form = useRef();
+	const consumerContext = useContext(UserConsumer);
 	const [vahicleCategory, setVahicleCategory] = useState();
+	const [vechicleType, setVechicleType] = useState();
 	const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-	const onSubmit = async values => {
+	const onSubmit = async (e) => {
 		await sleep(300)
-		window.alert(JSON.stringify(values, 0, 2))
+		const daat = form;
+	 consumerContext.handleEmailSend(form.current);
 	}
 
 	const handleRadioCategoryClick = (e) => {
@@ -28,7 +34,7 @@ const Booking = () => {
 					<label className='radio-css' key={index}>
 						<Field
 							className="margin-css"
-							name={ele}
+							name="select_category"
 							component="input"
 							type="radio"
 							value={ele}
@@ -40,6 +46,7 @@ const Booking = () => {
 			)
 		});
 		setVahicleCategory(data);
+		setVechicleType(value);
 	}
 
 	return (
@@ -48,8 +55,8 @@ const Booking = () => {
 			<Form
 				onSubmit={onSubmit}
 				initialValues={{ stooge: 'larry', employed: false }}
-				render={({ handleSubmit, form, submitting, pristine, values }) => (
-					<form onSubmit={handleSubmit}>
+				render={({ handleSubmit, submitting, pristine, values }) => (
+					<form ref={form} onSubmit={handleSubmit}>
 						<div>
 							<label className='comm-label'>Type of booking</label>
 							<Field name="typeOfBooking" component="select">
@@ -60,11 +67,11 @@ const Booking = () => {
 							</Field>
 						</div>
 						<div>
-							<label className='comm-label'>Select vehical</label>
+							<label className='comm-label'>Select vehicle</label>
 							<div>
 								<label className='radio-css'>
 									<Field
-										name="stooge"
+										name="select_veshicleType"
 										component="input"
 										type="radio"
 										value="Sedan"
@@ -75,7 +82,7 @@ const Booking = () => {
 								</label>
 								<label className='radio-css'>
 									<Field
-										name="stooge"
+										name="select_veshicleType"
 										component="input"
 										type="radio"
 										value="SUV"
@@ -86,7 +93,7 @@ const Booking = () => {
 								</label>
 								<label className='radio-css'>
 									<Field
-										name="stooge"
+										name="select_veshicleType"
 										component="input"
 										type="radio"
 										value="Luxury"
@@ -127,7 +134,7 @@ const Booking = () => {
 						<div>
 							<label className='comm-label'>User Name</label>
 							<Field
-								name="userName"
+								name="user_name"
 								component="input"
 								type="text"
 								placeholder="User Name"
@@ -136,7 +143,7 @@ const Booking = () => {
 						<div>
 							<label className='comm-label'>Contact number</label>
 							<Field
-								name="contactNumber"
+								name="contact_number"
 								component="input"
 								type="text"
 								placeholder="contact"

@@ -1,0 +1,36 @@
+.pay-link {
+    width: 100%;
+    background: #FECC18;
+    padding: 1%;
+}
+
+.left {
+    float: left;
+}
+
+.left>p {
+    color: #34373B;
+}
+
+.right {
+    float: right;
+    padding-top: 14px;
+}
+
+.pay-nav {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.right .pay-nav li {
+    margin-right: 10px;
+}
+
+.pay-nav>li>a>img{
+    height: 37px;
+    width: 80px;
+}

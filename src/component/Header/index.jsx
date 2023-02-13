@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import logo from '../../asset/logocrop.jpeg';
+import logo from '../../asset/logocrop.png';
 
 import './all.css';
 import './brands.css';
@@ -10,7 +10,7 @@ import './world.css';
 import './custom-post-1.css';
 import './custom-post-2.css';
 import './custom-post-3.css';
-import './custom-post-4.css';
+//import './custom-post-4.css';
 import './liqid.css';
 import './stylescss.css';
 import './themeo-graphy.css';
@@ -46,7 +46,7 @@ const Header = () => {
                 data-widget_type="theme-site-logo.default"
               >
                 <div className="elementor-widget-container">
-                  <a href="https://citylimonyc.com/">
+                  <a href="/">
                     <img
                       width="404"
                       height="186"
@@ -80,7 +80,7 @@ const Header = () => {
                       <FontAwesomeIcon icon={faPhone} />
                       </span>
                       <span className="elementor-icon-list-text">
-                        +91-9960536327
+                        +91-9960869689 
                       </span>
                     </li>
                   </ul>
@@ -116,7 +116,7 @@ const Header = () => {
                         <a
                           href='/'
                           aria-current="page"
-                          className="elementor-item elementor-item-active"
+                          className="elementor-item elementor-item-anchor"
                         >
                           Home
                         </a>
@@ -124,20 +124,15 @@ const Header = () => {
                       <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-49">
                         <a
                           className="elementor-item elementor-item-anchor"
+                          href='/#services'
                         >
                           Services
-                        </a>
-                      </li>
-                      <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-46">
-                        <a
-                          className="elementor-item elementor-item-anchor"
-                        >
-                          Fleet
                         </a>
                       </li>
                       <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-48">
                         <a
                           className="elementor-item elementor-item-anchor"
+                          href='/#about'
                         >
                           About
                         </a>
@@ -145,6 +140,7 @@ const Header = () => {
                       <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-47">
                         <a
                           className="elementor-item elementor-item-anchor"
+                          href='/#contact'
                         >
                           Contact
                         </a>
@@ -170,64 +166,6 @@ const Header = () => {
                     ></i>
                     <span className="elementor-screen-only">Menu</span>
                   </div>
-                  <nav
-                    className="elementor-nav-menu--dropdown elementor-nav-menu__container"
-                    aria-hidden="true"
-                    style={{ top: "39.9969px", width: "1324px", left: "0px" }}
-                  >
-                    <ul
-                      id="menu-2-8925b0b"
-                      className="elementor-nav-menu"
-                      data-smartmenus-id="16737565054339062"
-                    >
-                      <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-71 current_page_item menu-item-73">
-                        <a
-                          href="https://citylimonyc.com/"
-                          aria-current="page"
-                          className="elementor-item elementor-item-active"
-                          tabIndex="-1"
-                        >
-                          Home
-                        </a>
-                      </li>
-                      <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-49">
-                        <a
-                          href="https://citylimonyc.com/#services"
-                          className="elementor-item elementor-item-anchor"
-                          tabIndex="-1"
-                        >
-                          Services
-                        </a>
-                      </li>
-                      <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-46">
-                        <a
-                          href="https://citylimonyc.com/#fleets"
-                          className="elementor-item elementor-item-anchor"
-                          tabIndex="-1"
-                        >
-                          Fleet
-                        </a>
-                      </li>
-                      <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-48">
-                        <a
-                          href="https://citylimonyc.com/#about"
-                          className="elementor-item elementor-item-anchor"
-                          tabIndex="-1"
-                        >
-                          About
-                        </a>
-                      </li>
-                      <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-47">
-                        <a
-                          href="https://citylimonyc.com/#contact"
-                          className="elementor-item elementor-item-anchor"
-                          tabIndex="-1"
-                        >
-                          Contact
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
                 </div>
               </div>
             </div>

@@ -1,28 +1,65 @@
-import { useRef, useMemo } from 'react';
-import emailjs from '@emailjs/browser';
+import { useRef, useMemo, useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faUsers, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { caption } from '../../utils/constant';
 import { useNavigate } from "react-router-dom";
 import Contactus from '../Contactus';
-
+import { UserConsumer } from '../../contextProvider';
+import aboutus from '../../asset/aboutus.jpg';
+import stering from '../../asset/stering.webp';
+import airport_transfers from '../../asset/airport_transfers.jpg';
+import Intercity_Rides from '../../asset/Intercity_Rides.jpg';
+import Business_Meeting from '../../asset/Business_Meeting.jpg';
+import Wedding_Parties from '../../asset/Wedding_Parties.jpg';
 
 import './icon-box.css';
 import './carousel-cus.css';
 import './style.css';
 
 const Main = () => {
+  const [previousId, setPreviousId] = useState('elementor-tab-content-2021');
+  const [previousBtnId, setPreviousBtnId] = useState('elementor-tab-title-2021');
+
+
   const form = useRef();
   const navigate = useNavigate();
+  const consumerContext = useContext(UserConsumer);
+
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_KEY, process.env.REACT_APP_TEMPLATE_KEY, form.current, process.env.REACT_APP_PUBLIC_KEY)
-      .then((result) => {
-        alert("`Thank You for contact us ! Our team will reach out to you !");
-      }, (error) => {
-        console.log(error.text);
-      });
+    consumerContext.handleEmailSend(form.current);
   };
+
+  const handleClickYourDesire = (id) => {
+    if (!previousId) { setPreviousId(id); return }
+    const prevId = document.getElementById(previousId);
+    prevId.classList.remove("elementor-active");
+    prevId.style.display = "none";
+
+    if (id === 'elementor-tab-title-2021') {
+      const content = document.getElementById('elementor-tab-content-2021');
+      content.classList.add("elementor-active");
+      content.style.display = "block";
+      setPreviousId('elementor-tab-content-2021');
+    } else if (id === 'elementor-tab-title-2022') {
+      const content = document.getElementById('elementor-tab-content-2022');
+      content.classList.add("elementor-active");
+      content.style.display = "block";
+      setPreviousId('elementor-tab-content-2022');
+    } else if (id === 'elementor-tab-title-2023') {
+      const content = document.getElementById('elementor-tab-content-2023');
+      content.classList.add("elementor-active");
+      content.style.display = "block";
+      setPreviousId('elementor-tab-content-2023');
+    }
+
+    const btn = document.getElementById(id);
+    btn.classList.add('elementor-active');
+    const prevBtnId = document.getElementById(previousBtnId);
+    prevBtnId.classList.remove("elementor-active");
+    setPreviousBtnId(id);
+
+  }
 
   const asideSection = useMemo(() => {
     return caption.map((ele, index) => {
@@ -92,6 +129,30 @@ const Main = () => {
 
   const handleOnClick = () => {
     navigate("/booking");
+  }
+
+  const bookingBTN = () => {
+    return (
+      <div className="elementor-element elementor-element-506fc52c elementor-widget elementor-widget-button"
+        data-id="506fc52c" data-element_type="widget"
+        data-settings="{&quot;_animation&quot;:&quot;none&quot;,&quot;_animation_delay&quot;:700}"
+        data-widget_type="button.default">
+        <div className="elementor-widget-container">
+          <div className="elementor-button-wrapper">
+            <a href="/booking"
+              className="elementor-button-link elementor-button elementor-size-md"
+              role="button">
+              <span className="elementor-button-content-wrapper">
+                <span
+                  className="elementor-button-icon elementor-align-icon-right">
+                  <FontAwesomeIcon icon={faArrowRight} /> </span>
+                <span className="elementor-button-text">Booking</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    )
   }
 
 
@@ -198,7 +259,7 @@ const Main = () => {
                     data-id="0248791" data-element_type="widget" data-widget_type="image.default">
                     <div className="elementor-widget-container">
                       <img decoding="async" width="768" height="1152"
-                        src="https://a6ke76.n3cdn1.secureserver.net/wp-content/uploads/2022/09/angus-gray-qwnI-MAL9aM-unsplash.webp"
+                        src={stering}
                         className="attachment-medium_large size-medium_large wp-image-459" alt=""
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 768px" />
@@ -259,7 +320,7 @@ const Main = () => {
                             data-widget_type="image.default">
                             <div className="elementor-widget-container">
                               <img decoding="async" width="768" height="568"
-                                src="https://a6ke76.n3cdn1.secureserver.net/wp-content/uploads/2022/09/IMG-0311-2.webp"
+                                src={aboutus}
                                 className="attachment-medium_large size-medium_large wp-image-461"
                                 alt="" loading="lazy"
                                 sizes="(max-width: 768px) 100vw, 768px" />
@@ -344,7 +405,7 @@ const Main = () => {
                             data-widget_type="image.default">
                             <div className="elementor-widget-container">
                               <img decoding="async" width="289" height="146"
-                                src="https://a6ke76.n3cdn1.secureserver.net/wp-content/uploads/2022/08/Top-Reasons-to-Choose-Chauffeur-Airport-Transfers-2-1.png?time=1673814383"
+                                src={airport_transfers}
                                 className="attachment-medium size-medium wp-image-89" alt=""
                                 loading="lazy" />
                             </div>
@@ -357,36 +418,14 @@ const Main = () => {
                                 Airport transfers</h2>
                             </div>
                           </div>
-                          <div className="elementor-element elementor-element-6be1ab00 elementor-widget elementor-widget-heading"
+                          <div className="our-services elementor-element elementor-element-6be1ab00 elementor-widget elementor-widget-heading"
                             data-id="6be1ab00" data-element_type="widget"
                             data-widget_type="heading.default">
                             <div className="elementor-widget-container">
-                              <h2 className="elementor-heading-title elementor-size-default">With
-                                additional wait time and flight tracking in case of delays,
-                                our service is optimized to make every airport transfer a
-                                breeze.</h2>
+                              <h2 className="elementor-heading-title elementor-size-default">When it comes to catching an important flight, it is extremely important to stay on time. We reach you airport without any hassle.</h2>
                             </div>
                           </div>
-                          <div className="elementor-element elementor-element-506fc52c elementor-widget elementor-widget-button"
-                            data-id="506fc52c" data-element_type="widget"
-                            data-settings="{&quot;_animation&quot;:&quot;none&quot;,&quot;_animation_delay&quot;:700}"
-                            data-widget_type="button.default">
-                            <div className="elementor-widget-container">
-                              <div className="elementor-button-wrapper">
-                                <a href="https://citylimonyc.com/booking/"
-                                  className="elementor-button-link elementor-button elementor-size-md"
-                                  role="button">
-                                  <span className="elementor-button-content-wrapper">
-                                    <span
-                                      className="elementor-button-icon elementor-align-icon-right">
-                                      <i aria-hidden="true"
-                                        className="fas fa-arrow-right"></i> </span>
-                                    <span className="elementor-button-text">Booking</span>
-                                  </span>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
+                          {bookingBTN()}
                         </div>
                       </div>
                       <div className="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2e343699"
@@ -398,7 +437,7 @@ const Main = () => {
                             data-widget_type="image.default">
                             <div className="elementor-widget-container">
                               <img decoding="async" width="289" height="146"
-                                src="https://a6ke76.n3cdn1.secureserver.net/wp-content/uploads/2022/08/870295-1.png?time=1673814383"
+                                src={Intercity_Rides}
                                 className="attachment-medium size-medium wp-image-90" alt=""
                                 loading="lazy" />
                             </div>
@@ -411,35 +450,14 @@ const Main = () => {
                                 Intercity Rides</h2>
                             </div>
                           </div>
-                          <div className="elementor-element elementor-element-6da1bb2a elementor-widget elementor-widget-heading"
+                          <div className="our-services elementor-element elementor-element-6da1bb2a elementor-widget elementor-widget-heading"
                             data-id="6da1bb2a" data-element_type="widget"
                             data-widget_type="heading.default">
                             <div className="elementor-widget-container">
-                              <h2 className="elementor-heading-title elementor-size-default">Your
-                                stress-free solution for traveling between cities, with
-                                chauffeurs across the globe.</h2>
+                              <h2 className="elementor-heading-title elementor-size-default">We make your intercity travel stress free whether it's long-distance or short-distance journey.</h2>
                             </div>
                           </div>
-                          <div className="elementor-element elementor-element-5661aedc elementor-widget elementor-widget-button"
-                            data-id="5661aedc" data-element_type="widget"
-                            data-settings="{&quot;_animation&quot;:&quot;none&quot;,&quot;_animation_delay&quot;:700}"
-                            data-widget_type="button.default">
-                            <div className="elementor-widget-container">
-                              <div className="elementor-button-wrapper">
-                                <a href="https://citylimonyc.com/booking/"
-                                  className="elementor-button-link elementor-button elementor-size-md"
-                                  role="button">
-                                  <span className="elementor-button-content-wrapper">
-                                    <span
-                                      className="elementor-button-icon elementor-align-icon-right">
-                                      <i aria-hidden="true"
-                                        className="fas fa-arrow-right"></i> </span>
-                                    <span className="elementor-button-text">Booking</span>
-                                  </span>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
+                          {bookingBTN()}
                         </div>
                       </div>
                       <div className="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-392fe873"
@@ -451,7 +469,7 @@ const Main = () => {
                             data-widget_type="image.default">
                             <div className="elementor-widget-container">
                               <img decoding="async" width="289" height="146"
-                                src="https://a6ke76.n3cdn1.secureserver.net/wp-content/uploads/2022/08/dark-businesswoman-shaking-hands-with-male-colleague-1.png?time=1673814383"
+                                src={Business_Meeting}
                                 className="attachment-medium size-medium wp-image-91" alt=""
                                 loading="lazy" />
                             </div>
@@ -464,36 +482,16 @@ const Main = () => {
                                 Business Meeting</h2>
                             </div>
                           </div>
-                          <div className="elementor-element elementor-element-601e8e76 elementor-widget elementor-widget-heading"
+                          <div className="our-services elementor-element elementor-element-601e8e76 elementor-widget elementor-widget-heading"
                             data-id="601e8e76" data-element_type="widget"
                             data-widget_type="heading.default">
                             <div className="elementor-widget-container">
                               <h2 className="elementor-heading-title elementor-size-default">
-                                Concentrate on your meeting with your partners, forget about
-                                the road and the car, which will distract your thoughts.
+                                Focus on your events and meetings, forget about car and road. We take care of it.
                               </h2>
                             </div>
                           </div>
-                          <div className="elementor-element elementor-element-3838be89 elementor-widget elementor-widget-button"
-                            data-id="3838be89" data-element_type="widget"
-                            data-settings="{&quot;_animation&quot;:&quot;none&quot;,&quot;_animation_delay&quot;:700}"
-                            data-widget_type="button.default">
-                            <div className="elementor-widget-container">
-                              <div className="elementor-button-wrapper">
-                                <a href="https://citylimonyc.com/booking/"
-                                  className="elementor-button-link elementor-button elementor-size-md"
-                                  role="button">
-                                  <span className="elementor-button-content-wrapper">
-                                    <span
-                                      className="elementor-button-icon elementor-align-icon-right">
-                                      <i aria-hidden="true"
-                                        className="fas fa-arrow-right"></i> </span>
-                                    <span className="elementor-button-text">Booking</span>
-                                  </span>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
+                          {bookingBTN()}
                         </div>
                       </div>
                       <div className="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-14ab078f"
@@ -505,7 +503,7 @@ const Main = () => {
                             data-widget_type="image.default">
                             <div className="elementor-widget-container">
                               <img decoding="async" width="289" height="146"
-                                src="https://a6ke76.n3cdn1.secureserver.net/wp-content/uploads/2022/08/Depositphotos_186252082_xl-2015_rv-1060x599-1.png?time=1673814383"
+                                src={Wedding_Parties}
                                 className="attachment-medium size-medium wp-image-92" alt=""
                                 loading="lazy" />
                             </div>
@@ -518,36 +516,14 @@ const Main = () => {
                                 Wedding Parties</h2>
                             </div>
                           </div>
-                          <div className="elementor-element elementor-element-7253e545 elementor-widget elementor-widget-heading"
+                          <div className="our-services elementor-element elementor-element-7253e545 elementor-widget elementor-widget-heading"
                             data-id="7253e545" data-element_type="widget"
                             data-widget_type="heading.default">
                             <div className="elementor-widget-container">
-                              <h2 className="elementor-heading-title elementor-size-default">Our
-                                friendly, and attentive service combined with thorough
-                                attention to detail ensure you can truly relax and enjoy
-                                your special day.</h2>
+                              <h2 className="elementor-heading-title elementor-size-default">We ensure that you and your loved ones reach safely to wedding event. We ensure that your wedding transportation would be stress-free, reliable, comfortable, safe and secure.</h2>
                             </div>
                           </div>
-                          <div className="elementor-element elementor-element-3c7123a8 elementor-widget elementor-widget-button"
-                            data-id="3c7123a8" data-element_type="widget"
-                            data-settings="{&quot;_animation&quot;:&quot;none&quot;,&quot;_animation_delay&quot;:700}"
-                            data-widget_type="button.default">
-                            <div className="elementor-widget-container">
-                              <div className="elementor-button-wrapper">
-                                <a href="https://citylimonyc.com/booking/"
-                                  className="elementor-button-link elementor-button elementor-size-md"
-                                  role="button">
-                                  <span className="elementor-button-content-wrapper">
-                                    <span
-                                      className="elementor-button-icon elementor-align-icon-right">
-                                      <i aria-hidden="true"
-                                        className="fas fa-arrow-right"></i> </span>
-                                    <span className="elementor-button-text">Booking</span>
-                                  </span>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
+                          {bookingBTN()}
                         </div>
                       </div>
                     </div>
@@ -561,10 +537,10 @@ const Main = () => {
             data-id="64dd7944" data-element_type="section" id="fleets"
             data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
             <div className="elementor-container elementor-column-gap-default">
-              <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-38f11291"
+               <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-38f11291"
                 data-id="38f11291" data-element_type="column">
                 <div className="elementor-widget-wrap elementor-element-populated">
-                  <div className="elementor-element elementor-element-73d224c4 elementor-widget elementor-widget-heading animated fadeInLeft"
+                  {/*  <div className="elementor-element elementor-element-73d224c4 elementor-widget elementor-widget-heading animated fadeInLeft"
                     data-id="73d224c4" data-element_type="widget"
                     data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;,&quot;_animation_delay&quot;:200}"
                     data-widget_type="heading.default">
@@ -583,23 +559,23 @@ const Main = () => {
                   </div>
 
 
-                  <div className="elementor-element elementor-element-78c746c1 elementor-tabs-alignment-center elementor-tabs-view-horizontal elementor-widget elementor-widget-tabs"
+                <div className="elementor-element elementor-element-78c746c1 elementor-tabs-alignment-center elementor-tabs-view-horizontal elementor-widget elementor-widget-tabs"
                     data-id="78c746c1" data-element_type="widget" id="m-tabs2"
                     data-widget_type="tabs.default">
                     <div className="elementor-widget-container">
                       <div className="elementor-tabs">
                         <div className="elementor-tabs-wrapper" role="tablist">
-                          <div id="elementor-tab-title-2021"
+                          <div onClick={() => handleClickYourDesire('elementor-tab-title-2021')} id="elementor-tab-title-2021"
                             className="elementor-tab-title elementor-tab-desktop-title elementor-active"
                             aria-selected="true" data-tab="1" role="tab" tabIndex="0"
                             aria-controls="elementor-tab-content-2021" aria-expanded="true">
                             Regular Sedan</div>
-                          <div id="elementor-tab-title-2022"
+                          <div onClick={() => handleClickYourDesire('elementor-tab-title-2022')} id="elementor-tab-title-2022"
                             className="elementor-tab-title elementor-tab-desktop-title"
                             aria-selected="false" data-tab="2" role="tab" tabIndex="-1"
                             aria-controls="elementor-tab-content-2022" aria-expanded="false">SUV
                           </div>
-                          <div id="elementor-tab-title-2023"
+                          <div onClick={() => handleClickYourDesire('elementor-tab-title-2023')} id="elementor-tab-title-2023"
                             className="elementor-tab-title elementor-tab-desktop-title"
                             aria-selected="false" data-tab="3" role="tab" tabIndex="-1"
                             aria-controls="elementor-tab-content-2023" aria-expanded="false">
@@ -713,23 +689,7 @@ const Main = () => {
                                           </div>
                                         </div>
                                       </section>
-                                      <div className="elementor-element elementor-element-0aa01bc elementor-align-center elementor-widget elementor-widget-button"
-                                        data-id="0aa01bc" data-element_type="widget"
-                                        data-widget_type="button.default">
-                                        <div className="elementor-widget-container">
-                                          <div className="elementor-button-wrapper">
-                                            <a href="https://citylimonyc.com/booking/"
-                                              className="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow"
-                                              role="button">
-                                              <span
-                                                className="elementor-button-content-wrapper">
-                                                <span
-                                                  className="elementor-button-text">Booking</span>
-                                              </span>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      {bookingBTN()}
                                     </div>
                                   </div>
                                   <div className="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-0cdc30b"
@@ -824,23 +784,7 @@ const Main = () => {
                                           </div>
                                         </div>
                                       </section>
-                                      <div className="elementor-element elementor-element-76bbe2d elementor-align-center elementor-widget elementor-widget-button"
-                                        data-id="76bbe2d" data-element_type="widget"
-                                        data-widget_type="button.default">
-                                        <div className="elementor-widget-container">
-                                          <div className="elementor-button-wrapper">
-                                            <a href="https://citylimonyc.com/booking/"
-                                              className="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow"
-                                              role="button">
-                                              <span
-                                                className="elementor-button-content-wrapper">
-                                                <span
-                                                  className="elementor-button-text">Booking</span>
-                                              </span>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      {bookingBTN()}
                                     </div>
                                   </div>
                                   <div className="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-e2d6cd4"
@@ -934,23 +878,7 @@ const Main = () => {
                                           </div>
                                         </div>
                                       </section>
-                                      <div className="elementor-element elementor-element-51da24a elementor-align-center elementor-widget elementor-widget-button"
-                                        data-id="51da24a" data-element_type="widget"
-                                        data-widget_type="button.default">
-                                        <div className="elementor-widget-container">
-                                          <div className="elementor-button-wrapper">
-                                            <a href="https://citylimonyc.com/booking/"
-                                              className="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow"
-                                              role="button">
-                                              <span
-                                                className="elementor-button-content-wrapper">
-                                                <span
-                                                  className="elementor-button-text">Booking</span>
-                                              </span>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      {bookingBTN()}
                                     </div>
                                   </div>
                                   <div className="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-bccb7b2"
@@ -1035,30 +963,13 @@ const Main = () => {
                                           </div>
                                         </div>
                                       </section>
-                                      <div className="elementor-element elementor-element-9813fc6 elementor-align-center elementor-widget elementor-widget-button"
-                                        data-id="9813fc6" data-element_type="widget"
-                                        data-widget_type="button.default">
-                                        <div className="elementor-widget-container">
-                                          <div className="elementor-button-wrapper">
-                                            <a href="https://citylimonyc.com/booking/"
-                                              className="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow"
-                                              role="button">
-                                              <span
-                                                className="elementor-button-content-wrapper">
-                                                <span
-                                                  className="elementor-button-text">Booking</span>
-                                              </span>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      {bookingBTN()}
                                     </div>
                                   </div>
                                 </div>
                               </section>
                             </div>
                           </div>
-
                           <div id="elementor-tab-content-2022"
                             className="elementor-tab-content elementor-clearfix" data-tab="2"
                             role="tabpanel" aria-labelledby="elementor-tab-title-2022"
@@ -1159,23 +1070,7 @@ const Main = () => {
                                           </div>
                                         </div>
                                       </section>
-                                      <div className="elementor-element elementor-element-e32d860 elementor-align-center elementor-widget elementor-widget-button"
-                                        data-id="e32d860" data-element_type="widget"
-                                        data-widget_type="button.default">
-                                        <div className="elementor-widget-container">
-                                          <div className="elementor-button-wrapper">
-                                            <a href="https://citylimonyc.com/booking/"
-                                              className="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow"
-                                              role="button">
-                                              <span
-                                                className="elementor-button-content-wrapper">
-                                                <span
-                                                  className="elementor-button-text">Booking</span>
-                                              </span>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      {bookingBTN()}
                                     </div>
                                   </div>
                                   <div className="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-0948ba1"
@@ -1269,26 +1164,8 @@ const Main = () => {
                                                   </ul>
                                                 </div>
                                               </div>
-                                              <div className="elementor-element elementor-element-9e9cc34 elementor-align-center elementor-widget elementor-widget-button"
-                                                data-id="9e9cc34"
-                                                data-element_type="widget"
-                                                data-widget_type="button.default">
-                                                <div
-                                                  className="elementor-widget-container">
-                                                  <div
-                                                    className="elementor-button-wrapper">
-                                                    <a href="https://citylimonyc.com/booking/"
-                                                      className="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow"
-                                                      role="button">
-                                                      <span
-                                                        className="elementor-button-content-wrapper">
-                                                        <span
-                                                          className="elementor-button-text">Booking</span>
-                                                      </span>
-                                                    </a>
-                                                  </div>
-                                                </div>
-                                              </div>
+
+                                              {bookingBTN()}
                                             </div>
                                           </div>
                                         </div>
@@ -1387,23 +1264,7 @@ const Main = () => {
                                           </div>
                                         </div>
                                       </section>
-                                      <div className="elementor-element elementor-element-339c49e elementor-align-center elementor-widget elementor-widget-button"
-                                        data-id="339c49e" data-element_type="widget"
-                                        data-widget_type="button.default">
-                                        <div className="elementor-widget-container">
-                                          <div className="elementor-button-wrapper">
-                                            <a href="https://citylimonyc.com/booking/"
-                                              className="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow"
-                                              role="button">
-                                              <span
-                                                className="elementor-button-content-wrapper">
-                                                <span
-                                                  className="elementor-button-text">Booking</span>
-                                              </span>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      {bookingBTN()}
                                     </div>
                                   </div>
                                   <div className="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-e7d65f5"
@@ -1494,26 +1355,7 @@ const Main = () => {
                                                   </ul>
                                                 </div>
                                               </div>
-                                              <div className="elementor-element elementor-element-9f29312 elementor-align-center elementor-widget elementor-widget-button"
-                                                data-id="9f29312"
-                                                data-element_type="widget"
-                                                data-widget_type="button.default">
-                                                <div
-                                                  className="elementor-widget-container">
-                                                  <div
-                                                    className="elementor-button-wrapper">
-                                                    <a href="https://citylimonyc.com/booking/"
-                                                      className="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow"
-                                                      role="button">
-                                                      <span
-                                                        className="elementor-button-content-wrapper">
-                                                        <span
-                                                          className="elementor-button-text">Booking</span>
-                                                      </span>
-                                                    </a>
-                                                  </div>
-                                                </div>
-                                              </div>
+                                              {bookingBTN()}
                                             </div>
                                           </div>
                                         </div>
@@ -1524,10 +1366,10 @@ const Main = () => {
                               </section>
                             </div>
                           </div>
-                          <div className="elementor-tab-title elementor-tab-mobile-title"
+                         <div className="elementor-tab-title elementor-tab-mobile-title"
                             aria-selected="false" data-tab="3" role="tab" tabIndex="-1"
                             aria-controls="elementor-tab-content-2023" aria-expanded="false">
-                            Luxury</div>
+                            Luxury</div>  
                           <div id="elementor-tab-content-2023"
                             className="elementor-tab-content elementor-clearfix" data-tab="3"
                             role="tabpanel" aria-labelledby="elementor-tab-title-2023"
@@ -1636,24 +1478,7 @@ const Main = () => {
                                           </div>
                                         </div>
                                       </section>
-                                      <div className="elementor-element elementor-element-6d67a479 elementor-align-center elementor-widget elementor-widget-button"
-                                        data-id="6d67a479"
-                                        data-element_type="widget"
-                                        data-widget_type="button.default">
-                                        <div className="elementor-widget-container">
-                                          <div className="elementor-button-wrapper">
-                                            <a href="https://citylimonyc.com/booking/"
-                                              className="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow"
-                                              role="button">
-                                              <span
-                                                className="elementor-button-content-wrapper">
-                                                <span
-                                                  className="elementor-button-text">Booking</span>
-                                              </span>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      {bookingBTN()}
                                     </div>
                                   </div>
                                   <div className="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-ae2be8f"
@@ -1746,24 +1571,7 @@ const Main = () => {
                                           </div>
                                         </div>
                                       </section>
-                                      <div className="elementor-element elementor-element-598c641b elementor-align-center elementor-widget elementor-widget-button"
-                                        data-id="598c641b"
-                                        data-element_type="widget"
-                                        data-widget_type="button.default">
-                                        <div className="elementor-widget-container">
-                                          <div className="elementor-button-wrapper">
-                                            <a href="https://citylimonyc.com/booking/"
-                                              className="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow"
-                                              role="button">
-                                              <span
-                                                className="elementor-button-content-wrapper">
-                                                <span
-                                                  className="elementor-button-text">Booking</span>
-                                              </span>
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      {bookingBTN()}
                                     </div>
                                   </div>
                                   <div className="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-cf5e6cb"
@@ -1778,8 +1586,8 @@ const Main = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                    <Contactus sendEmail={sendEmail} form={form}  />
+                  </div> */}
+                  <Contactus sendEmail={sendEmail} form={form} />
                 </div>
               </div>
             </div>

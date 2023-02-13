@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import AppRoutes from './AppRoutes';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+import { AppContext } from './contextProvider';
 
 import './component/Main/call-1.css';
 import './component/Main/call-2.css';
@@ -10,12 +11,17 @@ import './component/Main/call-3.css';
 import './component/Main/call-4.css';
 import './component/Main/custom-animation.css';
 
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
+    <AppContext>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </AppContext>
   </React.StrictMode>
 );
 

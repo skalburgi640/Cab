@@ -37,11 +37,6 @@ const Contactus = ({ sendEmail, form }) => {
 								data-widget_type="form.default">
 								<div className="elementor-widget-container">
 									<form className="elementor-form" ref={form} onSubmit={sendEmail}>
-										<input type="hidden" name="post_id" value="71" />
-										<input type="hidden" name="form_id" value="2204c73f" />
-										<input type="hidden" name="referer_title"
-											value="City limo nyc -Best Limo service in New York" />
-										<input type="hidden" name="queried_id" value="71" />
 										<div
 											className="elementor-form-fields-wrapper elementor-labels-above">
 											<div
@@ -62,7 +57,7 @@ const Contactus = ({ sendEmail, form }) => {
 													className="elementor-field-label">
 													Email </label>
 												<input size="1" type="email"
-													name="reply_to" id="form-field-email"
+													name="user_email" id="form-field-email"
 													className="elementor-field elementor-size-sm  elementor-field-textual"
 													placeholder="example@gmail.com"
 													required="required" aria-required="true" />

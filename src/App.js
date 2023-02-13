@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Main />
-      <a class="fixedButton" href="https://wa.me/9960536327" target="_blank">
+      <a class="fixedButton" href="https://wa.me/9960869689/?text=Hi" target="_blank">
  				<div class="roundedFixedBtn">
         <img src={whats} style={{borderRadius : '34px'}} />           
          </div>
