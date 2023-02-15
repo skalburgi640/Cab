@@ -15,7 +15,7 @@ const Booking = () => {
 	const onSubmit = async (e) => {
 		await sleep(300)
 		const daat = form;
-	 consumerContext.handleEmailSend(form.current);
+		consumerContext.handleEmailSend(form.current);
 	}
 
 	const handleRadioCategoryClick = (e) => {
@@ -71,7 +71,7 @@ const Booking = () => {
 							<div>
 								<label className='radio-css'>
 									<Field
-										name="select_veshicleType"
+										name="vehicle"
 										component="input"
 										type="radio"
 										value="Sedan"
@@ -82,7 +82,7 @@ const Booking = () => {
 								</label>
 								<label className='radio-css'>
 									<Field
-										name="select_veshicleType"
+										name="vehicle"
 										component="input"
 										type="radio"
 										value="SUV"
@@ -93,7 +93,7 @@ const Booking = () => {
 								</label>
 								<label className='radio-css'>
 									<Field
-										name="select_veshicleType"
+										name="vehicle"
 										component="input"
 										type="radio"
 										value="Luxury"
@@ -147,6 +147,15 @@ const Booking = () => {
 								component="input"
 								type="text"
 								placeholder="contact"
+							/>
+						</div>
+						<div>
+							<label className='comm-label'>Email Id</label>
+							<Field
+								type="email"
+								name="from_email"
+								component="input"
+								placeholder="example@gmail.com"
 							/>
 						</div>
 						<div className="buttons">
