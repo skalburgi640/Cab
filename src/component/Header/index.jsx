@@ -76,12 +76,12 @@ const Header = () => {
                 <div className="elementor-widget-container">
                   <ul className="elementor-icon-list-items">
                     <li className="elementor-icon-list-item">
-                      <span className="elementor-icon-list-icon">
-                      <FontAwesomeIcon icon={faPhone} />
-                      </span>
-                      <span className="elementor-icon-list-text">
-                        +91-9960869689 
-                      </span>
+                      <a href="tel:+91-9960869689">
+                          <span className="elementor-icon-list-icon">
+                            <FontAwesomeIcon icon={faPhone} />
+                          </span>
+                          +91-9960869689
+                      </a>
                     </li>
                   </ul>
                 </div>

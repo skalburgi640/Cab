@@ -57,7 +57,7 @@ const Footer = () => {
                                     <div className="elementor-widget-container">
                                         <ul className="elementor-icon-list-items">
                                             <li className="elementor-icon-list-item">
-                                            <a href="tel:+91-9561518017">
+                                            <a href="tel:+91-9960869689">
                                                 <span className="elementor-icon-list-icon footer-icon">
                                                     <FontAwesomeIcon icon={faPhone} />
                                                 </span>
