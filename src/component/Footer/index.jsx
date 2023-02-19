@@ -130,7 +130,7 @@ const Footer = () => {
                     <div className="elementor-container elementor-column-gap-default">
                         <div className="elementor-widget-container pay-link">
                             <div className="left footer">
-                                <p>With Indore Cab, you do not have to worry about payment methods.We have all for you.  <br /> PayTm, Phonepe, Google Pay, Cash, etc. are some to name a few. </p>
+                                <p>With VEER Car Rental, you don't need to worry about payment methods. We have all payment gateways for you.  <br /> PayTm, Phonepe, Google Pay, Cash, etc. are some to name a few. </p>
                             </div>
                             <div className="right">
                                 <ul className="pay-nav">
