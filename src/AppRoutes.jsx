@@ -14,12 +14,18 @@ import App from './App';
 
 
 function AppRoutes() {
+  let bookingUrl = `${process.env.REACT_URL}/booking`;
+  if (window.origin === 'http://localhost:3000') {
+    bookingUrl = '/booking';
+  }
+  console.log('bookingUrl ::::::::::::;', bookingUrl);
+  console.log('process.env.REACT_URL ::::::::::::;', process.env.REACT_URL);
   return (
     <>
-    <Header />
+      <Header />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/booking" element={<Booking />} />
+        <Route path={bookingUrl} element={<Booking />} />
       </Routes>
       <Footer/>
     </>
