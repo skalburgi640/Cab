@@ -140,18 +140,14 @@ const Header = () => {
                       <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-47">
                         <a
                           className="elementor-item elementor-item-anchor"
-                          href='/#contact'
+                          href='/#contactus'
                         >
                           Contact
                         </a>
                       </li>
                     </ul>
                   </nav>
-                  <div
-                    className="elementor-menu-toggle"
-                    role="button"
-                    tabIndex="0"
-                    aria-label="Menu Toggle"
+                  <div className="elementor-menu-toggle" role="button" tabIndex="0" aria-label="Menu Toggle"
                     aria-expanded="false"
                   >
                     <i
@@ -166,6 +162,7 @@ const Header = () => {
                     ></i>
                     <span className="elementor-screen-only">Menu</span>
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -184,12 +181,13 @@ const Header = () => {
               >
                 <div className="elementor-widget-container">
                   <ul className="elementor-icon-list-items">
-                    <li className="elementor-icon-list-item">
+                    <li className="elementor-icon-list-item cursor-pointer">
+                      <span className="elementor-icon-list-text ">
+                      <a href="tel:+91-9561518017">
                       <span className="elementor-icon-list-icon">
                       <FontAwesomeIcon icon={faPhone} />
                       </span>
-                      <span className="elementor-icon-list-text">
-                       +91-9960536327
+                        +91-9561518017</a>
                       </span>
                     </li>
                   </ul>

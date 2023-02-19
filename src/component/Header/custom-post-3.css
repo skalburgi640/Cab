@@ -4,7 +4,7 @@
 
 .elementor-40 .elementor-element.elementor-element-37bde12b:not(.elementor-motion-effects-element-type-background),
 .elementor-40 .elementor-element.elementor-element-37bde12b>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-    background-color: #292a29;
+    background-color: white;
 }
 
 .elementor-40 .elementor-element.elementor-element-37bde12b {
@@ -49,7 +49,7 @@
 }
 
 .elementor-40 .elementor-element.elementor-element-8bef271 .elementor-icon-list-icon svg {
-    fill: #000000;
+    fill: #FECC18;
 }
 
 .elementor-40 .elementor-element.elementor-element-8bef271 {
@@ -165,5 +165,8 @@
 }
 
 .footer{
-    color: #fff !important;
+    color: #818181 !important;
+}
+.spacing{
+    min-height: 50px;
 }

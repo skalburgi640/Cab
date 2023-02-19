@@ -13,14 +13,13 @@ const Booking = () => {
 	const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 	const onSubmit = async (e) => {
-		await sleep(300)
-		const daat = form;
-		consumerContext.handleEmailSend(form.current);
+			await sleep(300)
+			const daat = form;
+			consumerContext.handleEmailSend(form.current);
 	}
 
 	const handleRadioCategoryClick = (e) => {
 		const value = e.target.value;
-		console.log('value ::::', value)
 	}
 	const handleRadioClick = (e) => {
 		const value = e.target.value;
@@ -39,6 +38,7 @@ const Booking = () => {
 							type="radio"
 							value={ele}
 							onClick={handleRadioCategoryClick}
+							required="true"
 						/>
 						{ele}
 					</label>
@@ -54,13 +54,12 @@ const Booking = () => {
 			<h1>Booking</h1>
 			<Form
 				onSubmit={onSubmit}
-				initialValues={{ stooge: 'larry', employed: false }}
 				render={({ handleSubmit, submitting, pristine, values }) => (
 					<form ref={form} onSubmit={handleSubmit}>
 						<div>
 							<label className='comm-label'>Type of booking</label>
-							<Field name="typeOfBooking" component="select">
-								<option disabled>Select Booking Type</option>
+							<Field name="typeOfBooking" component="select" required="true">
+								<option >Select Booking Type</option>
 								<option value="Outstation">Outstation</option>
 								<option value="Oneway drop">Oneway drop</option>
 								<option value="Airport transfer">Airport transfer</option>
@@ -77,6 +76,7 @@ const Booking = () => {
 										value="Sedan"
 										onClick={handleRadioClick}
 										className="margin-css"
+										required="true"
 									/>
 									Sedan
 								</label>
@@ -88,6 +88,7 @@ const Booking = () => {
 										value="SUV"
 										onClick={handleRadioClick}
 										className="margin-css"
+										required="true"
 									/>
 									SUV
 								</label>
@@ -99,7 +100,8 @@ const Booking = () => {
 										value="Luxury"
 										onClick={handleRadioClick}
 										className="margin-css"
-									/>
+										required="true"
+										/>
 									Luxury
 								</label>
 							</div>
@@ -112,15 +114,20 @@ const Booking = () => {
 						</div>
 						<div>
 							<label className='comm-label'>Journey date</label>
-							<Field name="journeydate" component="input" type="date" />
+							<Field name="journeydate" 
+							component="input" 
+							type="date"
+							required= "true"
+							 />
 						</div>
 						<div>
-							<label className='comm-label'>Pick up</label>
+							<label className='comm-label'>Pick up location</label>
 							<Field
 								name="pickup"
 								component="input"
 								type="text"
-								placeholder="Pick up"
+								placeholder="Pick up location"
+								required= "true"
 							/>
 							<label className='comm-label'>Drop location</label>
 							<Field
@@ -128,16 +135,18 @@ const Booking = () => {
 								component="input"
 								type="text"
 								placeholder="Drop location"
+								required= "true"
 							/>
 
 						</div>
 						<div>
-							<label className='comm-label'>User Name</label>
+							<label className='comm-label'>Name</label>
 							<Field
 								name="user_name"
 								component="input"
 								type="text"
-								placeholder="User Name"
+								placeholder="Name"
+								required= "true"
 							/>
 						</div>
 						<div>
@@ -147,6 +156,7 @@ const Booking = () => {
 								component="input"
 								type="text"
 								placeholder="contact"
+								required= "true"
 							/>
 						</div>
 						<div>
@@ -171,11 +181,9 @@ const Booking = () => {
 								Reset
 							</button>
 						</div>
-						<pre>{JSON.stringify(values, 0, 2)}</pre>
 					</form>
 				)}
 			/>
-			)
 		</div>
 	)
 }

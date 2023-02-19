@@ -3,30 +3,27 @@ import './custom-post-4.css';
 const Contactus = ({ sendEmail, form }) => {
 	return (
 		<>
-			<div className="elementor-element elementor-element-3ba6a79f elementor-widget elementor-widget-heading animated fadeInLeft"
-				data-id="3ba6a79f" data-element_type="widget"
-				data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;,&quot;_animation_delay&quot;:200}"
-				data-widget_type="heading.default">
-				<div className="elementor-widget-container">
-					<h2 className="elementor-heading-title elementor-size-default">Contact us</h2>
-				</div>
-			</div>
-			<div className="elementor-element elementor-element-50979f52 elementor-widget elementor-widget-heading animated fadeInLeft"
-				data-id="50979f52" data-element_type="widget"
-				data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;,&quot;_animation_delay&quot;:400}"
-				data-widget_type="heading.default">
-				<div className="elementor-widget-container">
-					<h2 className="elementor-heading-title elementor-size-default">If you have any
-						complaints or suggestions that will make our service more better and
-						reliable, please be generous to fill up the contact form below and let us
-						know how we can help you!
-					</h2>
-				</div>
-			</div>
-			<section
-				className="elementor-section elementor-inner-section elementor-element elementor-element-a5d4ef3 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-				data-id="a5d4ef3" data-element_type="section"
+			<section className="elementor-section elementor-inner-section elementor-element elementor-element-a5d4ef3 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="a5d4ef3" data-element_type="section" id="contactus"
 				data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+				<div className="elementor-element elementor-element-3ba6a79f elementor-widget elementor-widget-heading animated fadeInLeft"
+					data-id="3ba6a79f" data-element_type="widget"
+					data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;,&quot;_animation_delay&quot;:200}"
+					data-widget_type="heading.default">
+					<div className="elementor-widget-container">
+						<h2 className="elementor-heading-title elementor-size-default">Contact us</h2>
+					</div>
+				</div>
+				<div className="elementor-element elementor-element-50979f52 elementor-widget elementor-widget-heading animated fadeInLeft"
+					data-id="50979f52" data-element_type="widget"
+					data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;,&quot;_animation_delay&quot;:400}"
+					data-widget_type="heading.default">
+					<div className="elementor-widget-container">
+						<h2 className="elementor-heading-title elementor-size-default">Get a quote. Fill below details and submit form. W'll reach out to you shortly with the better deal.
+						</h2>
+					</div>
+				</div>
+			
 				<div className="elementor-container elementor-column-gap-default">
 					<div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-8019e9b"
 						data-id="8019e9b" data-element_type="column">

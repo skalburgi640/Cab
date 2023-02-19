@@ -4,7 +4,7 @@ import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import fb from '../../asset/fb.jpg';
 import inst from '../../asset/inst.jpg';
 import twit from '../../asset/twit.png';
-import logocrop from '../../asset/logocrop.png';
+import LogoFooter from '../../asset/LogoFooter.png';
 import pay from '../../asset/pay.png';
 import gpay from '../../asset/gpay.png';
 import ppay from '../../asset/ppay.png';
@@ -29,7 +29,7 @@ const Footer = () => {
                                     <div className="elementor-widget-container">
                                         <a href="#">
                                             <img
-                                                src={logocrop}
+                                                src={LogoFooter}
                                                 width="404" height="186"
                                                 className="attachment-full size-full wp-image-804" alt="" loading="lazy"
                                                 sizes="(max-width: 404px) 100vw, 404px" /> </a>
@@ -37,8 +37,8 @@ const Footer = () => {
                                 </div>
                                 <div className="elementor-element elementor-element-af72ee5 elementor-widget elementor-widget-text-editor"
                                     data-id="af72ee5" data-element_type="widget" data-widget_type="text-editor.default">
-                                    <div className="elementor-widget-container footer">
-                                        <p>&nbsp;Follow our social media platforms to know more about us.</p>
+                                    <div className="elementor-widget-container footer spacing">
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -57,15 +57,28 @@ const Footer = () => {
                                     <div className="elementor-widget-container">
                                         <ul className="elementor-icon-list-items">
                                             <li className="elementor-icon-list-item">
+                                            <a href="tel:+91-9561518017">
                                                 <span className="elementor-icon-list-icon footer-icon">
-                                                <FontAwesomeIcon icon={faPhone} /> </span>
-                                                <span className="elementor-icon-list-text footer">+91-9960536327</span>&nbsp;&nbsp;
-                                                <span className="elementor-icon-list-text footer">+91-9960536327</span>
+                                                    <FontAwesomeIcon icon={faPhone} />
+                                                </span>
+                                                   +91-9960869689
+                                              </a>
                                             </li>
                                             <li className="elementor-icon-list-item">
+                                              <a href="tel:+91-9561518017">
                                                 <span className="elementor-icon-list-icon footer-icon">
-                                                <FontAwesomeIcon icon={faEnvelope} /> </span>
-                                                <span className="elementor-icon-list-text footer">ranjitpatil26496@gmail.com</span>
+                                                    <FontAwesomeIcon icon={faPhone} />
+                                                </span>
+                                                   +91-9561518017
+                                              </a>
+                                            </li>
+                                            <li className="elementor-icon-list-item">
+                                            <a href="mailTo:info@veercarrental.com">
+                                                <span className="elementor-icon-list-icon footer-icon">
+                                                    <FontAwesomeIcon icon={faEnvelope} />
+                                                </span>
+                                                   info@veercarrental.com
+                                              </a>
                                             </li>
                                         </ul>
                                     </div>
