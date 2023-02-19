@@ -10,7 +10,7 @@ function App() {
       <Main />
       <a
         class="fixedButton"
-        href="https://wa.me/9960869689/?text=Hello, %0aI am looking car on rent."
+        href="https://wa.me/919960869689/?text=Hello, %0aI am looking car on rent."
         target="_blank"
       >
         <div class="roundedFixedBtn">
