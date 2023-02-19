@@ -16,7 +16,7 @@ export const AppContext = ({ children }) => {
       )
       .then(
         (result) => {
-          alert("`Thank You for contact us ! Our team will reach out to you !");
+          alert("`Booking confirmed! Our team will reach out you shortly.");
         },
         (error) => {
           console.log(error.text);
