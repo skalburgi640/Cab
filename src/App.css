@@ -812,6 +812,7 @@
   bottom: 0px;
   right: 0px; 
   padding: 20px;
+  z-index: 1;
 }
 .roundedFixedBtn{
 height: 60px;
