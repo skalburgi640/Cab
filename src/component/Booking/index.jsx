@@ -33,7 +33,7 @@ const Booking = () => {
 					<label className='radio-css' key={index}>
 						<Field
 							className="margin-css"
-							name="select_category"
+							name="vehicle"
 							component="input"
 							type="radio"
 							value={ele}
@@ -70,7 +70,7 @@ const Booking = () => {
 							<div>
 								<label className='radio-css'>
 									<Field
-										name="vehicle"
+										name="vehiclecategory"
 										component="input"
 										type="radio"
 										value="Sedan"
@@ -82,7 +82,7 @@ const Booking = () => {
 								</label>
 								<label className='radio-css'>
 									<Field
-										name="vehicle"
+										name="vehiclecategory"
 										component="input"
 										type="radio"
 										value="SUV"
@@ -94,7 +94,7 @@ const Booking = () => {
 								</label>
 								<label className='radio-css'>
 									<Field
-										name="vehicle"
+										name="vehiclecategory"
 										component="input"
 										type="radio"
 										value="Luxury"
@@ -131,7 +131,7 @@ const Booking = () => {
 							/>
 							<label className='comm-label'>Drop location</label>
 							<Field
-								name="droplocation"
+								name="drop"
 								component="input"
 								type="text"
 								placeholder="Drop location"
@@ -142,7 +142,7 @@ const Booking = () => {
 						<div>
 							<label className='comm-label'>Name</label>
 							<Field
-								name="user_name"
+								name="username"
 								component="input"
 								type="text"
 								placeholder="Name"
@@ -152,7 +152,7 @@ const Booking = () => {
 						<div>
 							<label className='comm-label'>Contact number</label>
 							<Field
-								name="contact_number"
+								name="contact"
 								component="input"
 								type="text"
 								placeholder="contact"
@@ -163,7 +163,7 @@ const Booking = () => {
 							<label className='comm-label'>Email Id</label>
 							<Field
 								type="email"
-								name="from_email"
+								name="to_email"
 								component="input"
 								placeholder="example@gmail.com"
 							/>
