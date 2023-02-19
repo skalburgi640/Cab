@@ -139,7 +139,7 @@ const Main = () => {
         data-widget_type="button.default">
         <div className="elementor-widget-container">
           <div className="elementor-button-wrapper">
-            <a href="/booking"
+            <a href="booking"
               className="elementor-button-link elementor-button elementor-size-md"
               role="button">
               <span className="elementor-button-content-wrapper">
