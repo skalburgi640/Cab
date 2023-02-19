@@ -14,12 +14,12 @@ import App from './App';
 
 
 function AppRoutes() {
-  let bookingUrl = `${process.env.REACT_URL}/booking`;
+  let bookingUrl = `${process.env.REACT_APP_URL}/booking`;
   if (window.origin === 'http://localhost:3000') {
     bookingUrl = '/booking';
   }
   console.log('bookingUrl ::::::::::::;', bookingUrl);
-  console.log('process.env.REACT_URL ::::::::::::;', process.env.REACT_URL);
+  console.log('process.env.REACT_APP_URL ::::::::::::;', process.env.REACT_APP_URL);
   return (
     <>
       <Header />
