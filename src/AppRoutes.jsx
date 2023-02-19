@@ -25,7 +25,7 @@ function AppRoutes() {
       <Header />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path={bookingUrl} element={<Booking />} />
+        <Route path='/booking' element={<Booking />} />
       </Routes>
       <Footer/>
     </>
