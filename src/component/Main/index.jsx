@@ -1,6 +1,6 @@
 import { useRef, useMemo, useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import {  faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { caption } from '../../utils/constant';
 import { useNavigate } from "react-router-dom";
 import Contactus from '../Contactus';

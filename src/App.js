@@ -1,8 +1,6 @@
-import Header from "./component/Header";
-import Main from "./component/Main";
-import Footer from "./component/Footer";
+import Main from "./component/Main"; 
 import whats from "./asset/whats.png";
-import phone from "./asset/phone.png";
+ 
 
 function App() {
   return (

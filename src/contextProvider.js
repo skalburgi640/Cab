@@ -6,7 +6,8 @@ const UserContext = createContext({
 });
 
 export const AppContext = ({ children }) => {
-  const handleEmailSend = (form) => {
+  const handleEmailSend = (form,setLoadginState) => {
+    debugger
     emailjs
       .sendForm(
         process.env.REACT_APP_SERVICE_KEY,
@@ -16,7 +17,11 @@ export const AppContext = ({ children }) => {
       )
       .then(
         (result) => {
-          alert("`Booking confirmed! Our team will reach out you shortly.");
+          if(result && result.status === 200){
+            alert("Booking confirmed! Our team will reach out you shortly.");
+            setLoadginState(false);
+          }
+
         },
         (error) => {
           console.log(error.text);

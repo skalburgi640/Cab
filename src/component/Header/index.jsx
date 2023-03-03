@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../asset/logocrop.png';
+import MenuHamburger from '../MenuHamburger';
 
 import './all.css';
 import './brands.css';
@@ -77,10 +78,10 @@ const Header = () => {
                   <ul className="elementor-icon-list-items">
                     <li className="elementor-icon-list-item">
                       <a href="tel:+91-9960869689">
-                          <span className="elementor-icon-list-icon">
-                            <FontAwesomeIcon icon={faPhone} />
-                          </span>
-                          +91-9960869689
+                        <span className="elementor-icon-list-icon">
+                          <FontAwesomeIcon icon={faPhone} />
+                        </span>
+                        +91-9960869689
                       </a>
                     </li>
                   </ul>
@@ -147,22 +148,12 @@ const Header = () => {
                       </li>
                     </ul>
                   </nav>
-                  <div className="elementor-menu-toggle" role="button" tabIndex="0" aria-label="Menu Toggle"
+                  <div style={{ background: '#fecc18' }} className="elementor-menu-toggle" role="button" tabIndex="0" aria-label="Menu Toggle"
                     aria-expanded="false"
                   >
-                    <i
-                      aria-hidden="true"
-                      role="presentation"
-                      className="elementor-menu-toggle__icon--open eicon-menu-bar"
-                    ></i>
-                    <i
-                      aria-hidden="true"
-                      role="presentation"
-                      className="elementor-menu-toggle__icon--close eicon-close"
-                    ></i>
-                    <span className="elementor-screen-only">Menu</span>
+                    <MenuHamburger />
                   </div>
-                  
+
                 </div>
               </div>
             </div>
@@ -183,11 +174,11 @@ const Header = () => {
                   <ul className="elementor-icon-list-items">
                     <li className="elementor-icon-list-item cursor-pointer">
                       <span className="elementor-icon-list-text ">
-                      <a href="tel:+91-9561518017">
-                      <span className="elementor-icon-list-icon">
-                      <FontAwesomeIcon icon={faPhone} />
-                      </span>
-                        +91-9561518017</a>
+                        <a href="tel:+91-9561518017">
+                          <span className="elementor-icon-list-icon">
+                            <FontAwesomeIcon icon={faPhone} />
+                          </span>
+                          +91-9561518017</a>
                       </span>
                     </li>
                   </ul>

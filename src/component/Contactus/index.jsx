@@ -76,12 +76,12 @@ const Contactus = ({ sendEmail, form }) => {
 												<label
 													className="elementor-field-label">
 													Phone </label>
-												<input size="1" type="tel"
+												<input size="1"  
 													name="contact_number"
 													id="form-field-field_1a3bc62"
 													className="elementor-field elementor-size-sm  elementor-field-textual"
 													required="required" aria-required="true"
-													pattern="[0-9()#&amp;+*-=.]+"
+													type="text" maxlength="10" pattern="\d{10}"
 													title="Only numbers and phone characters (#, -, *, etc) are accepted." />
 
 											</div>
