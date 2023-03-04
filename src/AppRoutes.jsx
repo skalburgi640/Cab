@@ -7,7 +7,7 @@ import {
   useNavigate
 } from "react-router-dom";
 import Header from "./component/Header";
-import Main from "./component/Main";
+import Quotation from "./component/Quotation";
 import Footer from "./component/Footer";
 import Booking from './component/Booking';
 import App from './App';
@@ -26,6 +26,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path='/booking' element={<Booking />} />
+        <Route path='/quotation' element={<Quotation />} />
       </Routes>
       <Footer/>
     </>

@@ -57,8 +57,12 @@ const Booking = () => {
 				<h1>Booking</h1>
 				<Form
 					onSubmit={onSubmit}
-					render={({ handleSubmit, submitting, pristine, values }) => (
-						<form ref={form} onSubmit={handleSubmit}>
+					render={({ handleSubmit, reset, submitting, pristine, values }) => (
+						<form ref={form}
+							onSubmit={event => {
+								handleSubmit(event).then(reset);
+							}}
+						>
 							<div>
 								<label className='comm-label'>Type of booking</label>
 								<Field name="typeOfBooking" component="select" required="true">
@@ -180,7 +184,7 @@ const Booking = () => {
 								<button
 									className='btn-reset'
 									type="button"
-									onClick={form.reset}
+									onClick={reset}
 									disabled={submitting || pristine}
 								>
 									Reset

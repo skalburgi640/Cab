@@ -146,6 +146,14 @@ const Header = () => {
                           Contact
                         </a>
                       </li>
+                      <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-47">
+                        <a
+                          className="elementor-item elementor-item-anchor"
+                          href='/quotation'
+                        >
+                          Get a Quote
+                        </a>
+                      </li>
                     </ul>
                   </nav>
                   <div style={{ background: '#fecc18' }} className="elementor-menu-toggle" role="button" tabIndex="0" aria-label="Menu Toggle"

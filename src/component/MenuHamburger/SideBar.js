@@ -34,6 +34,13 @@ const SideBar = ({ openClass }) => {
 						Contact
 					</a>
 				</li>
+				<li>
+					<a
+						href='/quotation'
+					>
+						Get a Quote
+					</a>
+				</li>
 			</ul>
 		</nav>
 	);

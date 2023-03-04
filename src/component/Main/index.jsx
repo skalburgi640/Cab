@@ -1,6 +1,6 @@
 import { useRef, useMemo, useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { caption } from '../../utils/constant';
 import { useNavigate } from "react-router-dom";
 import Contactus from '../Contactus';
@@ -11,6 +11,7 @@ import airport_transfers from '../../asset/airport_transfers.jpg';
 import Intercity_Rides from '../../asset/Intercity_Rides.jpg';
 import Business_Meeting from '../../asset/Business_Meeting.jpg';
 import Wedding_Parties from '../../asset/Wedding_Parties.jpg';
+import Loader from '../../loader';
 
 import './icon-box.css';
 import './carousel-cus.css';
@@ -19,7 +20,7 @@ import './style.css';
 const Main = () => {
   const [previousId, setPreviousId] = useState('elementor-tab-content-2021');
   const [previousBtnId, setPreviousBtnId] = useState('elementor-tab-title-2021');
-
+  const [isLoading, setLoadginState] = useState(false);
 
   const form = useRef();
   const navigate = useNavigate();
@@ -27,7 +28,8 @@ const Main = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    consumerContext.handleEmailSend(form.current);
+    setLoadginState(true);
+    consumerContext.handleEmailSend(form.current, setLoadginState);
   };
 
   const handleClickYourDesire = (id) => {
@@ -232,8 +234,8 @@ const Main = () => {
                                   role="button">
                                   <span className="elementor-button-content-wrapper">
                                     <span className="elementor-button-text">
-                                      <a href='/#contactus'>Get a Quote</a>
-                                      </span>
+                                      <a href='/quotation'>Get a Quote</a>
+                                    </span>
                                   </span>
                                 </button>
                               </div>
@@ -531,15 +533,16 @@ const Main = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </section> 
           <section
             className="elementor-section elementor-top-section elementor-element elementor-element-64dd7944 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
             data-id="64dd7944" data-element_type="section" id="fleets"
             data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
             <div className="elementor-container elementor-column-gap-default">
-               <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-38f11291"
+              <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-38f11291"
                 data-id="38f11291" data-element_type="column">
                 <div className="elementor-widget-wrap elementor-element-populated">
+                  {isLoading && <Loader classes="custom-resolution" />} 
                   <Contactus sendEmail={sendEmail} form={form} />
                 </div>
               </div>
