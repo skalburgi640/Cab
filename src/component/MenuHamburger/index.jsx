@@ -32,7 +32,7 @@ const MenuHamburger = () => {
 					<FontAwesomeIcon icon={faBars} />
 				</a>
 			</aside>
-			{on && <SideBar openClass="open" />}
+			{on && <SideBar openClass="open" handleOn={handleOn}/>}
 		</div>
 	);
 }

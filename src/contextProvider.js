@@ -2,11 +2,11 @@ import { createContext, useContext } from "react";
 import emailjs from "@emailjs/browser";
 
 const UserContext = createContext({
-  handleEmailSend: () => {},
+  handleEmailSend: () => { },
 });
 
 export const AppContext = ({ children }) => {
-  const handleEmailSend = (form,setLoadginState) => {
+  const handleEmailSend = (form, setLoadginState) => {
     emailjs
       .sendForm(
         process.env.REACT_APP_SERVICE_KEY,
@@ -16,10 +16,10 @@ export const AppContext = ({ children }) => {
       )
       .then(
         (result) => {
-          if(result && result.status === 200){
+          if (result && result.status === 200) {
             alert("Booking confirmed! Our team will reach out you shortly.");
             setLoadginState(false);
-            form.reset();
+            if (window.location.pathname === "/booking") window.location.href = "/";
           }
         },
         (error) => {

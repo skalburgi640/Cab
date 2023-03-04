@@ -125,6 +125,8 @@ const Booking = () => {
 									component="input"
 									type="date"
 									required="true"
+									min={new Date().toISOString().split('T')[0]}
+									max={new Date(new Date().getTime() + 45 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
 								/>
 							</div>
 							<div>
@@ -164,7 +166,7 @@ const Booking = () => {
 									type="text"
 									placeholder="contact"
 									required="true"
-									maxlength="13" pattern="\d{10}"
+									maxlength="10" pattern="\d{10}"
 								/>
 							</div>
 							<div>

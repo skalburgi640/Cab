@@ -1,10 +1,10 @@
 
-const SideBar = ({ openClass }) => {
+const SideBar = ({ openClass,handleOn }) => {
 	const classes = openClass === 'open' ? 'opneSidebar' : '';
 
 	return (
 		<nav className={`${classes} slide-bar`}>
-			<ul className="navlist">
+			<ul onClick={handleOn} className="navlist">
 				<li>
 					<a
 						href='/'

@@ -11,6 +11,7 @@ import Quotation from "./component/Quotation";
 import Footer from "./component/Footer";
 import Booking from './component/Booking';
 import App from './App';
+import whats from "./asset/whats.png";
 
 
 function AppRoutes() {
@@ -28,7 +29,16 @@ function AppRoutes() {
         <Route path='/booking' element={<Booking />} />
         <Route path='/quotation' element={<Quotation />} />
       </Routes>
-      <Footer/>
+      <Footer />
+      <a
+        class="fixedButton"
+        href="https://wa.me/919960869689/?text=Hello, %0aI am looking car on rent."
+        target="_blank"
+      >
+        <div class="roundedFixedBtn">
+          <img src={whats} style={{ borderRadius: "34px" }} />
+        </div>
+      </a>
     </>
   );
 }
