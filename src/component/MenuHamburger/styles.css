@@ -84,12 +84,13 @@
   }
 
   ul.navlist>li {
-      padding: 20px;
+      padding: 7px;
       border-bottom: 1px solid #ffffffc4;
   }
 
   ul.navlist>li>a {
       color: #ffffffa3;
+      font-size: 20px;
   }
 
   .slide-bar {
