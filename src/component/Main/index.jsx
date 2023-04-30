@@ -133,6 +133,10 @@ const Main = () => {
     navigate("/booking");
   }
 
+  const handleQuoteClick = () => {
+    navigate("/quotation");
+  }  
+
   const bookingBTN = () => {
     return (
       <div className="elementor-element elementor-element-506fc52c elementor-widget elementor-widget-button"
@@ -230,11 +234,12 @@ const Main = () => {
                             <div className="elementor-widget-container">
                               <div className="elementor-button-wrapper">
                                 <button
+                                onClick={handleQuoteClick}
                                   className="btn-b elementor-button-link elementor-button elementor-size-md"
                                   role="button">
                                   <span className="elementor-button-content-wrapper">
                                     <span className="elementor-button-text">
-                                      <a href='/quotation'>Get a Quote</a>
+                                      Get a Quote
                                     </span>
                                   </span>
                                 </button>
