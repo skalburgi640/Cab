@@ -38,7 +38,7 @@ const Footer = () => {
                                 <div className="elementor-element elementor-element-af72ee5 elementor-widget elementor-widget-text-editor"
                                     data-id="af72ee5" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div className="elementor-widget-container footer spacing">
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -57,28 +57,28 @@ const Footer = () => {
                                     <div className="elementor-widget-container">
                                         <ul className="elementor-icon-list-items">
                                             <li className="elementor-icon-list-item">
-                                            <a href="tel:+91-9960869689">
-                                                <span className="elementor-icon-list-icon footer-icon">
-                                                    <FontAwesomeIcon icon={faPhone} />
-                                                </span>
-                                                   +91-9960869689
-                                              </a>
+                                                <a href="tel:+91-9561518017">
+                                                    <span className="elementor-icon-list-icon footer-icon">
+                                                        <FontAwesomeIcon icon={faPhone} />
+                                                    </span>
+                                                    +91-9561518017
+                                                </a>
                                             </li>
                                             <li className="elementor-icon-list-item">
-                                              <a href="tel:+91-9561518017">
-                                                <span className="elementor-icon-list-icon footer-icon">
-                                                    <FontAwesomeIcon icon={faPhone} />
-                                                </span>
-                                                   +91-9561518017
-                                              </a>
+                                                <a href="tel:+91-9960869689">
+                                                    <span className="elementor-icon-list-icon footer-icon">
+                                                        <FontAwesomeIcon icon={faPhone} />
+                                                    </span>
+                                                    +91-9960869689
+                                                </a>
                                             </li>
                                             <li className="elementor-icon-list-item">
-                                            <a href="mailTo:info@veercarrental.com">
-                                                <span className="elementor-icon-list-icon footer-icon">
-                                                    <FontAwesomeIcon icon={faEnvelope} />
-                                                </span>
-                                                   info@veercarrental.com
-                                              </a>
+                                                <a href="mailTo:info@veercarrental.com">
+                                                    <span className="elementor-icon-list-icon footer-icon">
+                                                        <FontAwesomeIcon icon={faEnvelope} />
+                                                    </span>
+                                                    info@veercarrental.com
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>

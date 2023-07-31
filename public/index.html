@@ -21,12 +21,35 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>Book Your Cab</title> 
+  <title>Book Your Cab</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-06Y3Y4V7BG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-06Y3Y4V7BG');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MXL5XG2D');</script>
+  <!-- End Google Tag Manager -->
 </head>
 
-<body
-  class="home page-template-default page page-id-71 wp-custom-logo elementor-default elementor-kit-19 elementor-page elementor-page-71 e--ua-blink e--ua-chrome e--ua-webkit"
-  data-elementor-device-mode="desktop">
+<body class="home page-template-default page page-id-71 wp-custom-logo elementor-default elementor-kit-19 elementor-page
+  elementor-page-71 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXL5XG2D" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--
@@ -40,4 +63,5 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
+
 </html>

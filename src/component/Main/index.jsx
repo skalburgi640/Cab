@@ -1,3 +1,5 @@
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+
 import { useRef, useMemo, useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +14,8 @@ import Intercity_Rides from '../../asset/Intercity_Rides.jpg';
 import Business_Meeting from '../../asset/Business_Meeting.jpg';
 import Wedding_Parties from '../../asset/Wedding_Parties.jpg';
 import Loader from '../../loader';
+// import whats from "../../asset/whats.png";
+
 
 import './icon-box.css';
 import './carousel-cus.css';
@@ -129,13 +133,14 @@ const Main = () => {
     });
   }, [caption]);
 
-  const handleOnClick = () => {
-    navigate("/booking");
-  }
+  // const handleOnClick = () => {
+  //   // navigate("/booking");
+  //   return (<div><a href="tel:+91-9960869689">+91-9960869689 </a></div>)
+  // }
 
-  const handleQuoteClick = () => {
-    navigate("/quotation");
-  }  
+  // const handleQuoteClick = () => {
+  //   navigate("/quotation");
+  // }
 
   const bookingBTN = () => {
     return (
@@ -182,7 +187,7 @@ const Main = () => {
                     data-widget_type="heading.default">
                     <div className="elementor-widget-container">
 
-                      <h1 className="elementor-heading-title elementor-size-default">VEER CAR RENTAL SERVICE </h1>
+                      <h1 className="elementor-heading-title elementor-size-default">EXPERIENCE SAFE RIDES WITH OUR CAB SERVICE </h1>
                     </div>
                   </div>
                   <div className="elementor-element elementor-element-6a717900 elementor-widget elementor-widget-heading animated fadeInLeft"
@@ -190,8 +195,7 @@ const Main = () => {
                     data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;,&quot;_animation_delay&quot;:400}"
                     data-widget_type="heading.default">
                     <div className="elementor-widget-container">
-                      <h2 className="elementor-heading-title elementor-size-default">Veer car rental service is in Pune and Mumbai City,
-                        <br />Experience it Now!</h2>
+                      <h2 className="elementor-heading-title elementor-size-default">Enjoy peace of mind as you travel with our cab service, providing you with safe and secure rides.</h2>
                     </div>
                   </div>
                 </div>
@@ -204,28 +208,28 @@ const Main = () => {
                     className="elementor-section elementor-inner-section elementor-element elementor-element-5c22267 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                     data-id="5c22267" data-element_type="section">
                     <div className="elementor-container elementor-column-gap-default">
-                      <div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8fdc7d9"
-                        data-id="8fdc7d9" data-element_type="column">
-                        <div className="elementor-widget-wrap elementor-element-populated">
-                          <div className="elementor-element elementor-element-a632b40 elementor-align-center elementor-widget elementor-widget-button"
-                            data-id="a632b40" data-element_type="widget"
-                            data-widget_type="button.default">
-                            <div className="elementor-widget-container">
-                              <div className="elementor-button-wrapper">
-                                <button
-                                  onClick={handleOnClick}
-                                  className="btn-g elementor-button elementor-size-md"
-                                  role="button">
-                                  <span className="elementor-button-content-wrapper">
-                                    <span className="elementor-button-text">Booking</span>
+                      <a href="tel:+91-9561518017" className='pad-top-10'>
+                        <div className="width-100 elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8fdc7d9"
+                          data-id="8fdc7d9" data-element_type="column">
+                          <div className="elementor-widget-wrap elementor-element-populated">
+                            <div className="elementor-element elementor-element-a632b40 elementor-align-center elementor-widget elementor-widget-button"
+                              data-id="a632b40" data-element_type="widget"
+                              data-widget_type="button.default">
+                              <div className="elementor-widget-container">
+                                <div className="elementor-button-wrapper">
+                                  <span className="btn-booking btn-g elementor-button elementor-size-md elementor-button-content-wrapper">
+                                    <span className="elementor-icon-list-icon">
+                                      <FontAwesomeIcon icon={faPhone} />
+                                    </span>
+                                    <span className="mar-left-10 elementor-button-text">Booking</span>
                                   </span>
-                                </button>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-0560b7c"
+                      </a>
+                      {/* <div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-0560b7c"
                         data-id="0560b7c" data-element_type="column">
                         <div className="elementor-widget-wrap elementor-element-populated">
                           <div className="elementor-element elementor-element-37dc947 elementor-align-center elementor-widget elementor-widget-button"
@@ -233,21 +237,18 @@ const Main = () => {
                             data-widget_type="button.default">
                             <div className="elementor-widget-container">
                               <div className="elementor-button-wrapper">
-                                <button
-                                onClick={handleQuoteClick}
-                                  className="btn-b elementor-button-link elementor-button elementor-size-md"
-                                  role="button">
-                                  <span className="elementor-button-content-wrapper">
-                                    <span className="elementor-button-text">
-                                      Get a Quote
-                                    </span>
+                                <span className="btn-WA btn-b elementor-button-link elementor-button elementor-size-md elementor-button-content-wrapper">
+                                  <span className="elementor-button-text">
+                                    <div class="WA-icon">
+                                      <img src={whats} style={{ borderRadius: "34px" }} /></div>
+                                    Whatsapp Us
                                   </span>
-                                </button>
+                                </span>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </section>
                 </div>
@@ -263,12 +264,12 @@ const Main = () => {
               <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-9b197a6"
                 data-id="9b197a6" data-element_type="column">
                 <div className="elementor-widget-wrap elementor-element-populated">
-                  <div className="elementor-element elementor-element-0248791 elementor-widget elementor-widget-image"
+                  <div className="car-height elementor-element elementor-element-0248791 elementor-widget elementor-widget-image"
                     data-id="0248791" data-element_type="widget" data-widget_type="image.default">
-                    <div className="elementor-widget-container">
+                    <div className="car-height elementor-widget-container">
                       <img decoding="async" width="768" height="1152"
                         src={stering}
-                        className="attachment-medium_large size-medium_large wp-image-459" alt=""
+                        className="car-height attachment-medium_large size-medium_large wp-image-459" alt=""
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 768px" />
                     </div>
@@ -277,11 +278,11 @@ const Main = () => {
               </div>
               <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-eda23bd"
                 data-id="eda23bd" data-element_type="column">
-                <div className="elementor-widget-wrap elementor-element-populated">
+                <div className="">
                   <div className="elementor-element elementor-element-9b41eb6 elementor-widget elementor-widget-heading"
                     data-id="9b41eb6" data-element_type="widget" data-widget_type="heading.default">
                     <div className="elementor-widget-container">
-                      <h2 className="elementor-heading-title elementor-size-default">We make sure your journey is comfortable and memorable. Driving leaves us you just enjoy traveling.</h2>
+                      <h2 className="elementor-heading-title elementor-size-default">Why Veer Car Rental?</h2>
                     </div>
                   </div>
                   {asideSection}
@@ -343,7 +344,7 @@ const Main = () => {
                             data-id="76f6cdf4" data-element_type="widget"
                             data-widget_type="heading.default">
                             <div className="elementor-widget-container">
-                              <h2 className="elementor-heading-title elementor-size-default">Veer car rental is a Pune based cab service provider; We are in service since last 4 years. We recognized by our service, we make your journey joyful, safest and secure.</h2>
+                              <h2 className="elementor-heading-title elementor-size-default">Veer Car Rental is a Pune-based cab service provider with a commendable track record of serving customers for the past four years. We take pride in being recognized for our exceptional service, dedicated to making your journey not just convenient, but also joyful, safe, and secure.</h2>
                             </div>
                           </div>
                           <div className="elementor-element elementor-element-3e1e450a elementor-widget elementor-widget-heading"
@@ -351,7 +352,23 @@ const Main = () => {
                             data-widget_type="heading.default">
                             <div className="elementor-widget-container">
                               <h2 className="elementor-heading-title elementor-size-default">
-                                We provide car rental service for Airport transfer, Intercity rides, Business meetings, Family functions, Wedding parties, Weekend travels etc.
+                                Whether you're traveling from Pune to Mumbai, Mumbai to Pune, Pune to outstation, or Mumbai to outstation, we offer reliable car rental services to meet your transportation needs. Our fleet of well-maintained vehicles and professional drivers ensures a comfortable and smooth ride, allowing you to sit back, relax, and enjoy the journey.
+                              </h2>
+                            </div>
+                          </div>
+                          <div className="elementor-element elementor-element-76f6cdf4 elementor-widget elementor-widget-heading"
+                            data-id="76f6cdf4" data-element_type="widget"
+                            data-widget_type="heading.default">
+                            <div className="elementor-widget-container">
+                              <h2 className="elementor-heading-title elementor-size-default">At Veer Car Rental, we understand the importance of safety, and that's why we prioritize it above everything else. From implementing strict safety measures to adhering to road regulations, we go the extra mile to ensure your well-being throughout the trip. With our experienced drivers behind the wheel, you can trust us to provide you with a secure and worry-free travel experience.</h2>
+                            </div>
+                          </div>
+                          <div className="elementor-element elementor-element-3e1e450a elementor-widget elementor-widget-heading"
+                            data-id="3e1e450a" data-element_type="widget"
+                            data-widget_type="heading.default">
+                            <div className="elementor-widget-container">
+                              <h2 className="elementor-heading-title elementor-size-default">
+                                Choose Veer Car Rental for your next trip and experience the difference. We strive to exceed your expectations, making every journey with us a memorable one.
                               </h2>
                             </div>
                           </div>
@@ -538,7 +555,7 @@ const Main = () => {
                 </div>
               </div>
             </div>
-          </section> 
+          </section>
           <section
             className="elementor-section elementor-top-section elementor-element elementor-element-64dd7944 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
             data-id="64dd7944" data-element_type="section" id="fleets"
@@ -547,7 +564,7 @@ const Main = () => {
               <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-38f11291"
                 data-id="38f11291" data-element_type="column">
                 <div className="elementor-widget-wrap elementor-element-populated">
-                  {isLoading && <Loader classes="custom-resolution" />} 
+                  {isLoading && <Loader classes="custom-resolution" />}
                   <Contactus sendEmail={sendEmail} form={form} />
                 </div>
               </div>

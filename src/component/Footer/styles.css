@@ -30,11 +30,61 @@
     margin-right: 10px;
 }
 
-.pay-nav>li>a>img{
+.pay-nav>li>a>img {
     height: 37px;
     width: 80px;
 }
 
-.footer-icon{
-    color: #FECC18;;
+.footer-icon {
+    color: #FECC18;
+    ;
 }
+
+.car-height {
+    height: 100% !important;
+}
+
+.width-100 {
+    width: 100% !important;
+}
+
+.btn-booking {
+    /* background-color: var(--e-global-color-accent) !important; */
+    /* color: #ffff !important; */
+    border-style: none !important;
+}
+
+.pad-top-10 {
+    padding-top: 10px;
+}
+
+.mar-left-10 {
+    margin-left: 10px;
+}
+
+.btn-WA {
+    background-color: var(--e-global-color-accent) !important;
+    color: #ffff !important;
+    border-style: none !important;
+}
+
+.WA-icon {
+    height: 60px;
+    line-height: 80px;
+    width: 60px;
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 50%;
+
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* .elementor img {
+    height: auto;
+    max-width: 55%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none
+} */
